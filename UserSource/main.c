@@ -1,14 +1,5 @@
 #include "stm32f4xx.h"
 
-
-GPIO_InitTypeDef  GPIO_InitStructure;
-
-
-TIM_TimeBaseInitTypeDef  TIM_TimeBaseStructure;
-TIM_OCInitTypeDef  TIM_OCInitStructure;
-uint16_t PrescalerValue = 0;
-
-
 int i;
 int servo_value = 1611;
 int dir_flag = 1;
