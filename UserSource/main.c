@@ -40,7 +40,31 @@ int main(void)
 	TIM4->EGR |= TIM_EGR_UG;
 		while(1)
 		{
-			
+		if(TIM4->CNT == 53000)
+		{
+			if(dir_flag)
+			{
+				if(TIM4->CCR1 > 6500)
+				{
+					dir_flag = 0;
+				}
+				else
+				{
+					TIM4->CCR1 += 100;
+				}
+			}
+			else
+			{
+				if(TIM4->CCR1 < 1500)
+				{
+					dir_flag = 1;
+				}
+				else
+				{
+					TIM4->CCR1 -= 100;
+				}
+			}
+		}
 		}
 	
 }
